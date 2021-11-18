@@ -8,18 +8,18 @@ const Blog = ({ blog, user, updateLikes, removeBlog }) => {
 
   const ShowLess = () => (
     <div>
-      {blog.title} by {blog.author} <button onClick={handleClick}>View</button>
+      {blog.title} by {blog.author} <button id={blog.title} onClick={handleClick}>View</button>
     </div>
   )
 
   const ShowAll = () => (
-    <div>
-      {blog.title} by {blog.author} <button onClick={handleClick}>Hide</button>
+    <div className="blog">
+      {blog.title} by {blog.author} <button id="hide" onClick={handleClick}>Hide</button>
       <div>URL: {blog.url}</div>
-      <div>likes: {blog.likes} <button onClick={updateLikes}>like</button></div>
+      <div>likes: {blog.likes} <button id="like" onClick={updateLikes}>like</button></div>
       <div>Added by: {blog.user.name}</div>
       {user.username === blog.user.username ?
-        <button onClick={removeBlog}>Remove</button> : <div></div>}
+        <button id="like" onClick={removeBlog}>Remove</button> : <div></div>}
     </div>
   )
   const blogStyle = {
